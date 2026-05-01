@@ -1,0 +1,15 @@
+import mongoose, { Schema } from "mongoose";
+
+const userScheme = new Schema(
+    {
+        name: { type: String, required: true },
+        username: { type: String, required: true, unique: true },
+        password: { type: String }, // Optional for Google sign-in
+        googleId: { type: String },
+        token: { type: String }
+    }
+)
+
+const User = mongoose.model("User", userScheme);
+
+export { User };
