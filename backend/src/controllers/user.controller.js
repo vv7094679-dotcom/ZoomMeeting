@@ -6,7 +6,7 @@ import crypto from "crypto"
 import { Meeting } from "../models/meeting.model.js";
 import { OAuth2Client } from "google-auth-library";
 
-const client = new OAuth2Client("325595324232-j5e480ulefs7brvj290rp71gp4vnjq5b.apps.googleusercontent.com");
+const client = new OAuth2Client("325595324232-s2biba0ertvrtni72k8o69tc9qo3j62v.apps.googleusercontent.com");
 const login = async (req, res) => {
 
     const { username, password } = req.body;
@@ -107,7 +107,7 @@ const googleLogin = async (req, res) => {
     try {
         const ticket = await client.verifyIdToken({
             idToken: credential,
-            audience: "325595324232-j5e480ulefs7brvj290rp71gp4vnjq5b.apps.googleusercontent.com",
+            audience: "325595324232-s2biba0ertvrtni72k8o69tc9qo3j62v.apps.googleusercontent.com",
         });
         const payload = ticket.getPayload();
         const { email, name, sub: googleId } = payload;
